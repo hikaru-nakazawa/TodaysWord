@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @today.author %>
+</p>
+
+<p>
+  <strong>Words:</strong>
+  <%= @today.words %>
+</p>
+
+<%= link_to 'Edit', edit_today_path(@today) %> |
+<%= link_to 'Back', todays_path %>

@@ -1,0 +1,27 @@
+<%= form_with(model: today, local: true) do |form| %>
+  <% if today.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(today.errors.count, "error") %> prohibited this today from being saved:</h2>
+
+      <ul>
+      <% today.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author, id: :today_author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :words %>
+    <%= form.text_field :words, id: :today_words %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
